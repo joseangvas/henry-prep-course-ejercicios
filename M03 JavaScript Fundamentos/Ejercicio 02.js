@@ -4,34 +4,55 @@
 function devolverString(string) {
    // Debe retornar un string.
    // Tu código:
-}
-
-// ⛔️ "X" e "Y" son números.
-
-function suma(x, y) {
+   return string;
+ }
+ 
+ console.log(devolverString(50));
+ 
+ 
+ // ⛔️ "X" e "Y" son números.
+ 
+ function suma(x, y) {
    // Retorna el resultado de su suma.
    // Tu código:
-}
-
-function resta(x, y) {
+   return x + y;
+ }
+ 
+ console.log(suma(5, 80));
+ 
+ function resta(x, y) {
    // Retorna el resultado de la resta.
    // Tu código:
-}
-
-function divide(x, y) {
+   return x - y;
+ }
+ 
+ console.log(resta(30, 20));
+ 
+ 
+ function divide(x, y) {
    // Retorna el resultado de su división.
    // Tu código:
-}
+   return x / y;
+ }
+ 
+ console.log(divide(40, 8));
 
-function multiplica(x, y) {
+ function multiplica(x, y) {
    // Retorna el resultado de su multiplicación.
    // Tu código:
-}
-
-function obtenerResto(x, y) {
+   return x * y;
+ }
+ 
+ console.log(multiplica(6, 4));
+ 
+ 
+ function obtenerResto(x, y) {
    // Obten el resto de la división de "x" entre "y".
    // Tu código:
-}
+   return x % y;
+ }
+ 
+ console.log(obtenerResto(70, 6));
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
