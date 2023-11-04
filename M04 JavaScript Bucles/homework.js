@@ -249,7 +249,7 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
-   let contador = 0;
+   var contador = 1;
   
    do {
      num += 5;
