@@ -5,12 +5,18 @@ function mayuscula(nombre) {
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
+
+   return nombre.charAt(0).toUpperCase() + nombre.slice(1);
 }
+
+console.log(mayuscula('jose'));
 
 function invocarCallback(cb) {
    // Invoca/ejecuta el callback `cb`.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+
+   cb();
 }
 
 function operacionMatematica(num1, num2, cb) {
@@ -18,21 +24,39 @@ function operacionMatematica(num1, num2, cb) {
    // El callback realiza una operación matemática, por lo que necesita de los dos números.
    // Retorna el resultado del callback pasándole como parámetros los números.
    // Tu código:
-}
+
+   const resultado = cb(num1, num2);
+   return `El resultado es: ${resultado}`;
+ }
+ 
+ console.log(operacionMatematica(5, 3, function(n1, n2) {return n1+n2}));
 
 function sumarArray(arrayOfNumbers, cb) {
    // Recibes un arreglo de números y un callback.
    // Suma todos los números del arreglo.
    // Este resultado debes pasárselo como argumento al callback recibido.
-   // [NOTA]: no debes reotrnar nada.
+   // [NOTA]: no debes retornar nada.
    // Tu código:
-}
+   var acum = 0;
+
+   arrayOfNumbers.forEach((number) => {
+     acum += number;
+   });
+ 
+   cb(acum);
+ }
+ 
+ console.log(sumarArray([3, 5, 4], function sumar(num) {return num}));
 
 function forEach(array, cb) {
    // Recibes un arreglo y un callback.
    // Debes iterar sobre el arreglo, y por cada elemento ejecutar el callback.
    // Debes pasarle el elemento como argumento al callback.
    // Tu código:
+
+  array.forEach((elemento) => {
+    cb(elemento);
+  })
 }
 
 function map(array, cb) {
@@ -40,13 +64,34 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
+
+  let nvoArreglo = [];
+
+  array.map((item) => {
+    nvoArreglo.push(cb(item));
+  });
+
+  return nvoArreglo;
 }
+console.log(map([1, 2, 3], (x) => x * 2));
 
 function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
-}
+
+   const nvoArreglo = arrayOfStrings.filter((str) => {
+      if(str[0] === 'a') {
+        return true;
+      } else {
+        return false;
+      }
+   });
+  
+   return nvoArreglo;
+  }
+  
+  console.log(filter(['pedro', 'alvaro', 'teresa', 'antonio']));
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
