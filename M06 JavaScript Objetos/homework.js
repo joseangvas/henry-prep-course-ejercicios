@@ -7,14 +7,33 @@ function crearGato(nombre, edad) {
    // La propiedad "meow" será una función que retorne el string: "Meow!".
    // Retornar el objeto.
    // Tu código:
-}
+
+   var personas = {
+      nombre: nombre,
+      edad: edad,
+      meow: function() { return 'Meow!' }
+    }
+    return personas;
+  }
+  
+  console.log(crearGato('José Angel', 57));
 
 function nuevoUsuario(nombre, email, password) {
    // Debes crear un nuevo objeto.
    // Este debe tener las propiedades: "nombre", "email" y "password" con sus respectivos valores.
    // Retornar el objeto.
    // Tu código:
+
+  var usuario = {
+    nombre: nombre,
+    email: email,
+    password: password
+  };
+
+  return usuario;
 }
+
+console.log(nuevoUsuario('Joseangvas', 'correo@correo.com', 'ade02'));
 
 function agregarPropiedad(objeto, propiedad) {
    // Recibirás un objeto por parámetro.
@@ -22,32 +41,60 @@ function agregarPropiedad(objeto, propiedad) {
    // Esta propiedad será igual al valor `null`.
    // Retornar el objeto.
    // Tu código:
-}
+  objeto[propiedad] = null;
+  return objeto;
+};
+
+console.log(agregarPropiedad({Nombre: 'José', Edad: '57'}, 'oficio'));
 
 function invocarMetodo(objeto, metodo) {
    // El parámetro "metodo" es un string que coincide con el nombre de una propiedad del objeto recibido.
    // Esta propiedad contiene una función en su interior. Debes invocarla/ejecutarla.
    // [NOTA]: no necesitar retornar nada.
    // Tu código:
-}
+   if (typeof(objeto[metodo]) === 'function') {
+      objeto[metodo]();
+    } else {
+      console.error("No se puede llamar a la función");
+    }
+  }
+        invocarMetodo({Nombre: 'José', Edad: '57', oficio: function() {return this.Nombre + ', tengo '+ this.Edad + ' años';}}, 'oficio');
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
-}
+
+   let resultado = 5 * parseInt(objetoMisterioso.numeroMisterioso);
+   return resultado;
+ }
+ 
+ console.log(multiplicarNumeroDesconocidoPorCinco({Nombre: 'Jose', numeroMisterioso: 8, Edad: 57}));
 
 function eliminarPropiedad(objeto, propiedad) {
    // El parámetro "propiedad" es una propiedad del objeto que recibes.
    // Debes eliminarla del objeto y retornarlo finalmente.
    // Tu código:
+
+  delete objeto[propiedad];
+  return objeto;
 }
+
+console.log(eliminarPropiedad({Nombre: 'José', Edad: '57', Correo: 'correo@correo.com'}, 'Edad'));
 
 function tieneEmail(objetoUsuario) {
    // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
+   
+  if (objetoUsuario.hasOwnProperty('Correo')){
+    return true;
+  }else{
+    return false;
+  }
 }
+
+console.log(tieneEmail({Nombre: 'José', Correo: 'correo@correo.com'}));
 
 function tienePropiedad(objeto, propiedad) {
    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
